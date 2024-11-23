@@ -1,9 +1,9 @@
-package testnghomework;
+package homework;
 
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
-public class AssertEquals {
+public class AssertEqualsDemonstration {
     @Test
     public void verifyExpectedPaymentIsTheSameAsActual(){
         int expectedPayment = 2700;
@@ -12,7 +12,6 @@ public class AssertEquals {
         assertEquals(contractSalary,expectedPayment,
                 "Expected payment does not match the contract!");
     }
-
 
     @Test
     public void verifyStringLengthMatchesExpectedValue(){
@@ -23,7 +22,6 @@ public class AssertEquals {
         assertEquals(stringLength, expectedLength, "String length does not match!");
     }
 
-
     @Test
     public void verifySuccessfulLoginWhenGivenValidPassword(){
         String userPassword = "S3cr3t password";
@@ -31,8 +29,4 @@ public class AssertEquals {
 
         assertEquals(inputPassword, userPassword, "Wrong password!");
     }
-
-
-
-
 }

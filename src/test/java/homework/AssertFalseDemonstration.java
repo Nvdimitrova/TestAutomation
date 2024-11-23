@@ -1,10 +1,10 @@
-package testnghomework;
+package homework;
 
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertFalse;
 
-public class AssertFalse {
+public class AssertFalseDemonstration {
     @Test
     public void verifyNumberIsNotEven() {
         int number = 9;

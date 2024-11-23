@@ -1,10 +1,10 @@
-package testnghomework;
+package homework;
 
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertNotEquals;
 
-public class AssertNotEquals {
+public class AssertNotEqualsDemonstration {
     @Test
     public void verifyReversedStringDoesNotEqualOriginal() {
         String greeting = "Hello";
@@ -13,7 +13,6 @@ public class AssertNotEquals {
         assertNotEquals(reversedGreeting, greeting,
                 "The reversed string should not be equal to the original string!");
     }
-
 
     double electricity = 117.28;
     double water = 34.45;
@@ -50,5 +49,13 @@ public class AssertNotEquals {
         double remainingAmount = income - expenses;
 
         assertNotEquals(remainingAmount, 0.0, "Remaining amount should not be zero!");
+    }
+
+    @Test
+    public void verifyTheProfileStatusChanges() {
+        String loggedOut = "User";
+        String loggedIn = "Nikol Dimitrova";
+
+        assertNotEquals(loggedOut, loggedIn, "Profile status should change after login!");
     }
 }

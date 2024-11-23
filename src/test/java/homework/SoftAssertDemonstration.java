@@ -1,4 +1,5 @@
-package testnghomework;
+package homework;
 
 public class SoftAssertDemonstration {
+
 }
