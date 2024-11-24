@@ -1,4 +1,4 @@
-package homework;
+package assertions;
 
 import org.testng.annotations.Test;
 
