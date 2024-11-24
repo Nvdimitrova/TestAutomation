@@ -58,4 +58,21 @@ public class AssertNotEqualsDemonstration {
 
         assertNotEquals(loggedOut, loggedIn, "Profile status should change after login!");
     }
+
+    public String loginMessage() {
+        return "Welcome!";
+    }
+
+    public String logoutMessage() {
+        return "Goodbye!";
+    }
+
+    @Test
+    public void verifyDifferentMessagesPopsUpWhenLoggingInAndLoggingOut() {
+        String loggingInMessage = loginMessage();
+        String loggingOutMessage = logoutMessage();
+
+        assertNotEquals(loggingOutMessage, loggingInMessage,
+                "Login and logout messages should not be the same!");
+    }
 }

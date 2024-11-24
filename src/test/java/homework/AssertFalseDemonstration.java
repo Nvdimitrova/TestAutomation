@@ -2,24 +2,72 @@ package homework;
 
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+
 import static org.testng.Assert.assertFalse;
 
 public class AssertFalseDemonstration {
     @Test
-    public void verifyNumberIsNotEven() {
-        int number = 9;
+    public void verifyLoginFailWithWrongPassword() {
+        String expectedPassword = "S3cr3t password";
+        String providedPassword = "Secret password";
 
-        boolean isNumberEven = (number % 2 == 0);
+        boolean isPasswordSame = expectedPassword.equals(providedPassword);
 
-        assertFalse(isNumberEven, "Condition should be false!");
+        assertFalse(isPasswordSame,
+                "Login should fail when the provided password is incorrect.");
     }
 
     @Test
-    public void verifyStringIsNotEmpty() {
-        String greeting = "Welcome";
+    public void verifyFirstNumberIsSmallestThanSecondNumber() {
+        double firstNumber = 111.111;
+        double secondNumber = 222.222;
 
-        boolean isEmpty = greeting.isEmpty();
+        boolean isFirstNumBigger = firstNumber > secondNumber;
 
-        assertFalse(isEmpty, "The string should not be empty");
+        assertFalse(isFirstNumBigger);
+    }
+
+    @Test
+    public void verifyPasswordIsShorterThanRequired() {
+        int requiredPasswordLength = 10;
+        String userPassword = "password";
+
+        int userPasswordLength = userPassword.length();
+
+        boolean isUserPasswordLonger = userPasswordLength > requiredPasswordLength;
+
+        assertFalse(isUserPasswordLonger,
+                "Password should be shorter than the required length!");
+    }
+
+    public ArrayList<String> recipeElements() {
+        ArrayList<String> ingredients = new ArrayList<>();
+        ingredients.add("mushrooms");
+        ingredients.add("gnocchi");
+        ingredients.add("olive oil");
+        ingredients.add("spinach");
+        ingredients.add("blue cheese");
+        return ingredients;
+    }
+
+    @Test
+    public void verifyIngredientIsRemovedFromList() {
+        ArrayList<String> recipeIngredients = recipeElements();
+        recipeIngredients.remove("blue cheese");
+
+        boolean isIngredientInRecipe = recipeIngredients.contains("blue cheese");
+
+        assertFalse(isIngredientInRecipe,
+                "'Blue cheese' should have been removed from the recipe!");
+    }
+
+    @Test
+    public void verifyNumberIsNotNegative() {
+        int number = 120;
+
+        boolean isNumberNegative = number < 0;
+
+        assertFalse(isNumberNegative, "Number should not be negative!");
     }
 }
