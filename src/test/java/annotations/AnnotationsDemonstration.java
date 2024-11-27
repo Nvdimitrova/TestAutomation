@@ -15,6 +15,17 @@ public class AnnotationsDemonstration {
         System.out.println("        = = =");
     }
 
+    @BeforeClass
+    public void executingBeforeClass() {
+        System.out.println("     BEFORE CLASS");
+        System.out.println();
+    }
+
+    @BeforeMethod
+    public void executingBeforeMethod() {
+        System.out.println("Executing BEFORE method!");
+    }
+
     @Test
     public void firstTest() {
         System.out.println("Executing first test...");
@@ -28,6 +39,17 @@ public class AnnotationsDemonstration {
     @Test
     public void thirdTest() {
         System.out.println("Executing third test...");
+    }
+
+    @AfterMethod
+    public void executingAfterMethod() {
+        System.out.println("Executing AFTER method!");
+        System.out.println();
+    }
+
+    @AfterClass
+    public void executingaAfterClass() {
+        System.out.println("     AFTER CLASS");
     }
 
     @AfterTest
