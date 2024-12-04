@@ -20,11 +20,12 @@ public class RegistrationPageTests {
     @BeforeMethod
     public void initBrowser() {
         driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     @Test
-    public void testUserCanAccessRegistrationForm() {
+    public void testUserCanAccessRegistrationForm() throws InterruptedException {
         //Step 1. Go to iSkillo home page
         driver.get(HOME_PAGE_URL);
 
@@ -33,7 +34,7 @@ public class RegistrationPageTests {
         loginLink.click();
 
         //Step 1.2. Click on 'Register' link
-        WebElement registerLink = driver.findElement(By.cssSelector("a[href=\"/users/register\"]"));
+        WebElement registerLink = driver.findElement(By.linkText("Register"));
         registerLink.click();
 
         //Step 2. Verify that the registration form is displayed
