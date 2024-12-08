@@ -34,7 +34,7 @@ public class RegistrationPageTests {
         loginLink.click();
 
         //Step 1.2. Click on 'Register' link
-        WebElement registerLink = driver.findElement(By.linkText("Register"));
+        WebElement registerLink = driver.findElement(By.xpath("//a[contains(text(),'Register')]"));
         registerLink.click();
 
         //Step 2. Verify that the registration form is displayed
@@ -66,6 +66,8 @@ public class RegistrationPageTests {
         String actualPlaceholderForEmail = emailInputFieldPlaceholder.getAttribute("placeholder");
         Assert.assertEquals(actualPlaceholderForEmail, expectedPlaceholderForEmail);
 
+        //birthday
+
         //Step 1.1.3. Verify placeholder for password
         WebElement passwordInputFieldPlaceholder = driver.findElement(By.id("defaultRegisterFormPassword"));
         String expectedPlaceholderForPassword = "Password";
@@ -77,6 +79,8 @@ public class RegistrationPageTests {
         String expectedPlaceholderForConfirmPassword = "Confirm Password";
         String actualPlaceholderForConfirmPassword = confirmPasswordInputFieldPlaceholder.getAttribute("placeholder");
         Assert.assertEquals(actualPlaceholderForConfirmPassword, expectedPlaceholderForConfirmPassword);
+
+        //public info
 
 
         //Step 2. Provide user credentials

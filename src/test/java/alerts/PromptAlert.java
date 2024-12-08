@@ -19,7 +19,6 @@ public class PromptAlert {
 
     private static final String EXPECTED_ALERT_MESSAGE = "I am a JS prompt";
     private static final String MY_MESSAGE = "My first alert message!";
-
     private static final String RESULT_MESSAGE_ACCEPTED = "You entered: " + MY_MESSAGE;
     private static final String RESULT_MESSAGE_DISMISS = "You entered: null";
 

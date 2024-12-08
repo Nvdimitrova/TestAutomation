@@ -16,7 +16,6 @@ import java.time.Duration;
 
 public class RegularAlert {
     private static final String ALERTS_URL = "https://the-internet.herokuapp.com/javascript_alerts";
-
     private static final String EXPECTED_ALERT_MESSAGE = "I am a JS Alert";
     private static final String RESULT_MESSAGE = "You successfully clicked an alert";
 

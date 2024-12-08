@@ -48,7 +48,7 @@ public class LoginPageTests {
         //Step 1. Navigate to the Login page
         driver.get(LOGIN_PAGE_URL);
 
-        //Step 1.1. Verify the Sign in form title
+        //Step 1.1. Verify the Login form title
         WebElement signInFormTitle = driver.findElement(By.xpath("//p[contains(text(),'Sign in')]"));
         String expectedSignInFormTitleText = "Sign in";
         String actualSignInFormTitleText = signInFormTitle.getText();
@@ -96,6 +96,7 @@ public class LoginPageTests {
         //Step 5. Verify user is redirected to the Posts page
         wait.until(ExpectedConditions.urlToBe(HOME_PAGE_URL));
         Assert.assertEquals(driver.getCurrentUrl(), HOME_PAGE_URL);
+
 
         //Step 5.1. Verify Profile link is displayed
         WebElement navigationBarProfileLink = driver.findElement(By.id("nav-link-profile"));

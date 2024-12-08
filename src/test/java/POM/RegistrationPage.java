@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class RegistrationPage extends BasePage {
     private final String REGISTRATION_PAGE_URL = "/users/register";
 
+    //Registration page locators
     String registrationFormTitle_locator = "//h4[contains(text(),'Sign up')]";
     String registrationFormUsernameInputField_locator = "//input[contains(@placeholder,'Username')]";
     String registrationFormEmailInputField_locator = "//input[contains(@placeholder,'email')]";
@@ -16,6 +17,7 @@ public class RegistrationPage extends BasePage {
     String registrationFormConfirmPasswordInputField_locator = "defaultRegisterPhonePassword";
     String registrationFormPublicInfoField_locator = "//textarea[contains(@placeholder,'Public info')]";
     String registrationFormSubmitButton_locator = "sign-in-button";
+    String registrationFormToastMessage_locator = ".toast-message.ng-star-inserted";
 
     public RegistrationPage(WebDriver driver) {
         super(driver);
@@ -86,5 +88,10 @@ public class RegistrationPage extends BasePage {
         WebElement registrationFormSubmitButton = driver.findElement(By.id(registrationFormSubmitButton_locator));
         wait.until(ExpectedConditions.elementToBeClickable(registrationFormSubmitButton));
         registrationFormSubmitButton.click();
+    }
+
+    public String getToastMessageText() {
+        WebElement toastMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(registrationFormToastMessage_locator)));
+        return toastMessage.getText();
     }
 }

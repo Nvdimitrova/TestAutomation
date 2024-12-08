@@ -18,7 +18,6 @@ public class BasePage {
 
     public void navigateTo(String pageURLPath) {
         String currentURL = BASE_URL + pageURLPath;
-
         driver.get(currentURL);
     }
 }
