@@ -17,6 +17,7 @@ import java.time.Duration;
 public class ConfirmAlert {
     private static final String ALERTS_URL = "https://the-internet.herokuapp.com/javascript_alerts";
     private static final String EXPECTED_ALERT_MESSAGE = "I am a JS Confirm";
+
     private static final String RESULT_MESSAGE_ACCEPTED = "You clicked: Ok";
     private static final String RESULT_MESSAGE_DISMISS = "You clicked: Cancel";
 
